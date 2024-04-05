@@ -1,20 +1,21 @@
+import React from "react";
+
+const Button = (props) => {
+   const {variant, text} = props;
+   return (
+      <button className={`p-4 ${variant} text-white rounded-md`}>
+         {text}
+      </button>
+   );
+};
 
 function App() {
-
    return (
       <div className="font-poppins flex justify-center gap-2 bg-blue-900 items-center min-h-screen">
-         <button
-            type="button"
-            className="p-4 bg-black text-white rounded-md">Click Me!
-         </button>
-         <button
-            type="button"
-            className="p-4 bg-black text-white rounded-md">Click Me!
-         </button>
-         <button
-            type="button"
-            className="p-4 bg-black text-white rounded-md">Click Me!
-         </button>
+         <Button
+            text="click me"
+            variant="bg-black"
+         />
       </div>
    );
 }
