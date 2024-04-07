@@ -3,7 +3,7 @@ import Button from "../Elements/Button";
 
 const FormLogin = () => {
    return (
-      <form action="" method="post">
+      <form action="" method="post" autoComplete="off">
          <InputForm
             htmlFor="email"
             id="email"

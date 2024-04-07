@@ -3,7 +3,7 @@ import Button from "../Elements/Button";
 
 const FormRegister = () => {
    return (
-      <form action="" method="post">
+      <form action="" method="post" autoComplete="off">
          <InputForm
             label="Fullname"
             htmlFor="fullname"
