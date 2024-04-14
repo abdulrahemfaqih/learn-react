@@ -39,12 +39,12 @@ const FormLogin = () => {
    return (
       <form onSubmit={handleLogin} autoComplete="off">
          {loginFailed && (
-            <p className="mb-2 rounded-sm bg-red-300 px-2 py-1 text-sm font-semibold text-red-500">
+            <p className="mb-2 rounded-sm bg-red-200 px-2 py-1 text-sm font-medium text-red-500">
                {loginFailed}
             </p>
          )}
          {loginSuccess && (
-            <p className="mb-2 rounded-sm bg-green-300 px-2 py-1 text-sm font-semibold text-green-500">
+            <p className="mb-2 rounded-sm bg-green-200 px-2 py-1 text-sm font-medium text-green-500">
                Login Berhasil
             </p>
          )}

@@ -5,7 +5,9 @@ import LoginPage from "./pages/login.jsx";
 import RegisterPage from "./pages/register.jsx";
 import ErrorPage from "./pages/404.jsx";
 import Cover from "./pages/cover.jsx";
-import ProductPage from "./pages/product.jsx";
+import ProductPage from "./pages/products.jsx";
+import DetailProductPage from "./pages/detailProduct.jsx";
+import ProfilePage from "./pages/profile.jsx";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -26,10 +28,18 @@ const router = createBrowserRouter([
       path: "/products",
       element: <ProductPage />,
    },
+   {
+      path: "/profile",
+      element: <ProfilePage />,
+   },
+   {
+      path: "/product/:id",
+      element: <DetailProductPage />,
+   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
    <React.StrictMode>
       <RouterProvider router={router} />
-   </React.StrictMode>
+   </React.StrictMode>,
 );
