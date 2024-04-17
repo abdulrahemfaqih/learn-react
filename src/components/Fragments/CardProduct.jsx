@@ -2,10 +2,14 @@ import Button from "../Elements/Button";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
+import { formatRupiah } from "../../utils/priceFormat";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkMode";
 const CardProduct = (props) => {
+   const { isDarkMode } = useContext(DarkModeContext);
    const { children } = props;
    return (
-      <div className="flex w-full max-w-xs flex-col rounded-md border bg-white shadow-md">
+      <div className={`flex w-full max-w-xs flex-col rounded-md border shadow-md ${isDarkMode && "bg-slate-900"}`}>
          {children}
       </div>
    );
@@ -19,7 +23,7 @@ const CardHeader = (props) => {
             id={id}
             src={image}
             alt="product"
-            className="h-72 w-full rounded-t-lg object-contain p-8"
+            className="h-60 w-full rounded-t-lg object-cover p-8"
          />
       </Link>
    );
@@ -41,12 +45,7 @@ const CardBody = (props) => {
    );
 };
 
-const formatRupiah = (price) => {
-   return  price.toLocaleString("id-ID", {
-      style: "currency",
-      currency: "USD",
-   });
-};
+
 
 const CardFooter = (props) => {
    const { price, id } = props;
